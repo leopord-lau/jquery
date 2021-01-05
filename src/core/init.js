@@ -6,28 +6,38 @@ import rsingleTag from "./var/rsingleTag.js";
 import "../traversing/findFilter.js";
 
 // A central reference to the root jQuery(document)
+
+// ! 定义一个root
 var rootjQuery,
 
 	// A simple way to check for HTML strings
 	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
 	// Strict HTML recognition (#11290: must start with <)
 	// Shortcut simple #id case for speed
+
+	// ! 简单匹配检查 html
 	rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/,
 
+	// ! 初始化函数
 	init = jQuery.fn.init = function( selector, context, root ) {
 		var match, elem;
 
 		// HANDLE: $(""), $(null), $(undefined), $(false)
+		// ! 防止以上几种错误传参
 		if ( !selector ) {
 			return this;
 		}
 
 		// Method init() accepts an alternate rootjQuery
 		// so migrate can support jQuery.sub (gh-2101)
+		
+		// ! 根
 		root = root || rootjQuery;
 
 		// Handle HTML strings
+		// ! 处理字符
 		if ( typeof selector === "string" ) {
+			// ! 如果是绑定标签
 			if ( selector[ 0 ] === "<" &&
 				selector[ selector.length - 1 ] === ">" &&
 				selector.length >= 3 ) {
@@ -36,10 +46,12 @@ var rootjQuery,
 				match = [ null, selector, null ];
 
 			} else {
+				// ! 正则匹配
 				match = rquickExpr.exec( selector );
 			}
 
 			// Match html or make sure no context is specified for #id
+			// TODO  不知道怎么调用找到当前元素
 			if ( match && ( match[ 1 ] || !context ) ) {
 
 				// HANDLE: $(html) -> $(array)

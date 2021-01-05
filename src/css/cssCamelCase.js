@@ -7,6 +7,7 @@ var rmsPrefix = /^-ms-/;
 // Used by the css & effects modules.
 // Support: IE <=9 - 11+
 // Microsoft forgot to hump their vendor prefix (#9572)
+// ! 为什么要将 -ms- 转成 ms- 后在采用驼峰命名  msS
 function cssCamelCase( string ) {
 	return camelCase( string.replace( rmsPrefix, "ms-" ) );
 }

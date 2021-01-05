@@ -1,6 +1,8 @@
 /**
  * Determines whether an object can have data
  */
+
+ // ! 定义一个对象是否可以包含data
 export default function( owner ) {
 
 	// Accepts only:

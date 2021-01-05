@@ -1,5 +1,6 @@
 import document from "../var/document.js";
 
+// ! script标签中存在的属性
 var preservedScriptAttributes = {
 	type: true,
 	src: true,
@@ -7,6 +8,7 @@ var preservedScriptAttributes = {
 	noModule: true
 };
 
+// ! 执行js片段
 function DOMEval( code, node, doc ) {
 	doc = doc || document;
 

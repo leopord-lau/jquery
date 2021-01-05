@@ -3,6 +3,7 @@ import documentElement from "../var/documentElement.js";
 
 import "../selector/contains.js"; // jQuery.contains
 
+// ! 元素是否挂载在该文档上
 var isAttached = function( elem ) {
 		return jQuery.contains( elem.ownerDocument, elem ) ||
 			elem.getRootNode( composed ) === elem.ownerDocument;

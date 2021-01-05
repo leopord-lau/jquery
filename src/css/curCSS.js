@@ -2,6 +2,8 @@ import jQuery from "../core.js";
 import isAttached from "../core/isAttached.js";
 import getStyles from "./var/getStyles.js";
 
+// TODO
+
 function curCSS( elem, name, computed ) {
 	var ret;
 

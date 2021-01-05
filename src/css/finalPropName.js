@@ -1,6 +1,8 @@
 import document from "../var/document.js";
 
+// ! css 前缀
 var cssPrefixes = [ "Webkit", "Moz", "ms" ],
+	// ! 创建一个空标签的style
 	emptyStyle = document.createElement( "div" ).style,
 	vendorProps = {};
 
@@ -20,6 +22,9 @@ function vendorPropName( name ) {
 }
 
 // Return a potentially-mapped vendor prefixed property
+// TODO name是怎样的格式
+
+// ! 返回一个可能存在的第三方前缀值
 function finalPropName( name ) {
 	var final = vendorProps[ name ];
 

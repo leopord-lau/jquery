@@ -1,6 +1,7 @@
 import jQuery from "../core.js";
 
 // Cross-browser xml parsing
+// ! 解析XML
 jQuery.parseXML = function( data ) {
 	var xml, parserErrorElem;
 	if ( !data || typeof data !== "string" ) {

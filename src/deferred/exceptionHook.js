@@ -6,6 +6,7 @@ import "../deferred.js";
 // warn about them ASAP rather than swallowing them by default.
 var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
 
+//  ! 异常处理
 jQuery.Deferred.exceptionHook = function( error, stack ) {
 
 	if ( error && rerrorNames.test( error.name ) ) {

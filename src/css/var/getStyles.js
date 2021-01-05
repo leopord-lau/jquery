@@ -1,3 +1,4 @@
+// ! 获取元素中所有样式
 export default function( elem ) {
 
 	// Support: IE <=11+ (trac-14150)

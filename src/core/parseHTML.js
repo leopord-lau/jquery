@@ -7,10 +7,13 @@ import buildFragment from "../manipulation/buildFragment.js";
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
 // keepScripts (optional): If true, will include scripts passed in the html string
+// ! 解析html
 jQuery.parseHTML = function( data, context, keepScripts ) {
+	// ! data为string类型
 	if ( typeof data !== "string" ) {
 		return [];
 	}
+	// ! 上下文为什么会是boolean类型？？？？？？？？？？？？
 	if ( typeof context === "boolean" ) {
 		keepScripts = context;
 		context = false;
@@ -22,6 +25,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 
 		// Stop scripts or inline event handlers from being executed immediately
 		// by using document.implementation
+		// ! 通过创建处理文档对象来创建一个新的document
 		context = document.implementation.createHTMLDocument( "" );
 
 		// Set the base href for the created document

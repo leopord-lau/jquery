@@ -1,4 +1,6 @@
 // A method for quickly swapping in/out CSS properties to get correct calculations.
+// TODO 用法
+// ! 快速转换css
 export default function( elem, options, callback ) {
 	var ret, name,
 		old = {};
